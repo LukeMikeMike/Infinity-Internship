@@ -86,9 +86,7 @@ form_el.onsubmit = function(event){
     };
     xhttp.open("POST", "https://httpstat.us/200", true);
     
-    // tu sprawdzenie walidacji
-    // lub usuwamy novalidate z formularza (wtedy będą komunikaty domyślne przeglądarki, ale nie wyśle)
-    //xhttp.send(new FormData(form_el));
+   
     console.log("wysyłam");
 };
 
@@ -96,20 +94,20 @@ formBtn.addEventListener('click', function(){
     form_el.classList.add('is-submitted');
 });
 
-//zapasowe (ignore!!!)
+// scroll fade (do dołu)
 
-// function scrollCallback(position){
-//     //console.log("scrollCallback:", position);
-//     if( position > 1 ){
-//         if( hdrData.state !== 'moving' ){
-//             hdrData.state = 'moving';
-//             hdrData.element.classList.add('compact');
-//         }
-//     }
-//     else {
-//         if( hdrData.state !== 'top' ){
-//             hdrData.state = 'top';
-//             hdrData.element.classList.remove('compact');
-//         }
-//     }
-// }
+function scrollCallback(position){
+    //console.log("scrollCallback:", position);
+    if( position > 1 ){
+        if( hdrData.state !== 'moving' ){
+            hdrData.state = 'moving';
+            hdrData.element.classList.add('compact');
+        }
+    }
+    else {
+        if( hdrData.state !== 'top' ){
+            hdrData.state = 'top';
+            hdrData.element.classList.remove('compact');
+        }
+    }
+}
