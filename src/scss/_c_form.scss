@@ -1,0 +1,107 @@
+input, select{
+    border: 2px solid $color-2;
+    padding: .5 * $space;
+    font-family: inherit;
+    color: $color-2;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    
+    & + label{
+        position: relative;
+        padding-left: 30px;
+
+        &:before{
+            position: absolute;
+            left: 0;
+            line-height: 1;
+        }
+    }
+    
+    &:focus + label:before{
+        color: $color-4;
+    }
+}
+input[type="checkbox"] + label:before{
+    content: "☐";
+    top: .05em;
+    font-size: 1.5em;
+}
+input[type="radio"] + label:before{
+    content: "○";
+    top: -.2em;
+    font-size: 2em;
+}
+input[type="checkbox"]:checked + label:before{
+    content: "☑"
+}
+input[type="radio"]:checked + label:before{
+    content: "●"
+}
+
+.form-error-msg{
+    color: red;
+    font-size: $body-font-size2;
+    display: none;
+}
+
+.is-submitted {
+    input, select{
+        &:invalid ~ .form-error-msg{
+            display: block;
+        }
+    }
+}
+
+.form{
+    
+    &__el{
+        margin-bottom: .5 * $space;
+        
+        label{
+            display: block;
+            margin-bottom: .5 * $space;
+        }
+        
+        input, select{
+            width: 100%;
+        }
+    }
+}
+
+
+.formBtn {
+    display: inline-block;
+    background-color: grey;
+    padding: $space * .5 $space;
+    min-width: 190px;
+    color: blue;
+    border: 1px solid $white;
+    font-size: $body-font-size2;
+    text-align: center;
+    text-transform: uppercase;
+    
+    &:hover{
+        color: #fff;
+        background-color: $color-4;
+    }
+    
+    &--ghost{
+        color: #fff;
+        background-color: $color-4;
+        
+        &:hover{
+            color: $color-4;
+            background-color: #fff;
+        }
+    }
+}

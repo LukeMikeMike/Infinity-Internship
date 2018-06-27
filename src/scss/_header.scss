@@ -1,0 +1,194 @@
+.main-hdr{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $space * 3;
+    //padding: $space 0;
+    z-index: 20;
+    overflow: hidden;
+    //background-color: $color-2-light;
+    color: #fff;
+    
+    
+    @include max-media($br-desktop - 1px){
+        .nav-open &{
+            height: 100vh;
+            background-color: rgba(0,0,0,.5);
+            transition: background-color .3s ease-out;
+            
+        }
+    }
+    
+    // .top_social {
+    //     border-bottom: 1px solid rgba(white,.3);
+
+    //     .wrapper {
+    //         position: relative;
+    //         height: auto;
+    //         text-align: right;
+    //     }
+    // }
+
+    .wrapper{
+        position: relative;
+    }
+}
+
+.hdr-logo{
+    position: absolute;
+    z-index: 20;
+    left: $space;
+    top: $space * .5;
+    width: 10%;
+    
+    @include min-media($br-tablet){
+        left: $space * 2;
+    }
+}
+
+.main-nav{
+    padding-top: $space * 2;
+    @extend %simple-text-shadow;
+    
+    @include min-media($br-desktop){
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        top: 0;
+        // right: $space;
+        margin: 0 auto;
+        padding-top: $space * .75;
+        
+        ul {
+            text-align: center;
+
+            
+        }
+        li{
+            display: inline-block;
+            width: auto;
+            height: auto;
+            border-right: 1px solid $white;
+            padding-right: 30px;
+
+            // float: right;
+                
+        }
+        a {
+            padding-left: $space * .75;
+            font-size: 75%;
+        }
+        // .btn {
+        //     position: absolute;
+        //     min-width: 160px;
+        //     height: auto;
+        //     right: 0px;
+        //     top: $space * .25;
+            
+            
+        // }
+    }
+    @include max-media($br-desktop - 1px){
+        ul, .btn  {
+            visibility: hidden;
+            
+        }
+
+        .nav-open &{
+            text-align: center;
+            display: block;
+
+            ul, .btn {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.nav-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $space * 2.5;
+    padding: $space;
+    display: block;
+    
+    
+    span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -.25 * $space;
+        display: block;
+        width: $space * .5;
+        height: $space * .5 * 0.125;
+        background-color: #fff;
+        @extend %simple-box-shadow;
+        
+        &:before, &:after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            margin-left: -.25 * $space;
+            width: $space * .5;
+            height: $space * .5 * 0.125;
+            background-color: #fff;
+            @extend %simple-box-shadow;
+        }
+        
+        &:before{
+            margin-top: -0.125 * $space;
+        }
+        &:after{
+            margin-top: 0.125 * $space;
+        }
+    }
+    
+    @include min-media($br-desktop){
+        display: none;
+
+    }
+}
+
+/* fixed / animacje */
+@include min-media($br-desktop){
+    .main-hdr{
+        position: fixed;
+        
+        &.compact{
+           
+            background-color: rgba(0,0,0,.5);
+            height: 4 * $base-unit;
+            
+            .top_social {
+                display: none;
+                // transition: display 2s linear;
+            }
+            .main-nav{
+                padding-top: .5 * $space;
+                a{
+                    font-size: .75em;
+                }
+            }
+            
+            .hdr-logo{
+                width: 100px;
+            }
+        }
+        
+        /* animacja */
+        
+        transition: background-color .3s ease-out, height .3s ease-out;
+        
+        .main-nav{
+            transition: padding-top .3s ease-out;
+            a{
+                transition: font-size .3s ease-out, line-height .3s ease-out;
+            }
+        }
+        .hdr-logo{
+            transition: width .3s ease-out;
+        }
+    }
+}

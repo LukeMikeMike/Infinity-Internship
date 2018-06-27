@@ -1,0 +1,65 @@
+<section class="component form">
+        <div class="wrapper">
+    
+            <h1>Contact</h1>
+    
+            <form class="form__cont" novalidate data-js="form">
+    
+                <div class="form__block">
+                    <div class="form__el">
+                        <label for="field_t">Hello I'm</label>
+                        <input name="field_t" type="text" placeholder="Your Name" required />
+                        <span class="form-error-msg">Wrong text!</span>
+                    </div>
+                    <div class="form__el">
+                            <label for="field_t">And I represent</label>
+                            <input name="field_t" type="text" placeholder="Company Name" required />
+                            <span class="form-error-msg">Wrong text!</span>
+                        </div>
+                   
+                    <div class="form__el">
+                        <label for="field_p">Call me at</label>
+                        <input pattern="[0-9]{11}" name="field_p" type="text" placeholder="phone number 48xxxxxxxxx" required />
+                        <span class="form-error-msg">Wrong text!</span>
+                    </div>
+
+                    <div class="form__el">
+                            <label for="field_e">Or send an e-mail to</label>
+                            <input name="field_e" type="email" placeholder="adres@poczta.pl" required />
+                            <span class="form-error-msg">Wrong email!</span>
+                        </div>
+                </div>
+
+                <!-- inne pola jeśli potrzebne -->
+                <!-- <div class="form__block">
+                    <div class="form__el">
+                        <label for="field_s">Field for select</label>
+                        <select name="field_s" required>
+                            <option value="" selected>Select value</option>
+                            <option value="1">Value 1</option>
+                            <option value="2">Value 2</option>
+                        </select>
+                        <span class="form-error-msg">Wrong value!</span>
+                    </div> -->
+                    <!-- <div class="form__el">
+                        <label for="field_r">Are You sure?</label>
+                        <input name="field_r" id="field_yes" type="radio" value="yes" required />
+                        <label for="field_yes">Yes</label>
+                        <input name="field_r" id="field_no" type="radio" value="no" required />
+                        <label for="field_no">No</label>
+                        <span class="form-error-msg">Nothing chcecked!</span>
+                    </div> -->
+                    <div class="form__el">
+                        <label for="field_cbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </label>
+                        <input name="field_c" id="field_cbox" type="checkbox" required />
+                        <label for="field_cbox">Checkbox label</label>
+                        <span class="form-error-msg">Check something!</span>
+                    </div>
+                </div>
+                <div class="form__block">
+                    <button class="btn" type="submit" data-js="formBtn">Send form</button>
+                </div>
+            </form>
+    
+        </div>
+    </section>

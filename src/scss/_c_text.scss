@@ -1,0 +1,25 @@
+
+
+.component_text{
+    position: relative;
+    width: 75%;
+    margin: auto;
+}
+.text_1 {
+font-size: $base-unit; 
+// font-weight: regular;
+text-align: justify;
+// position: relative;
+width: 100%;
+left: 0;
+bottom: 65%;
+@include max-media(1200px){
+    font-size: 120%;
+}
+@include max-media(768px){
+    font-size: 80%;
+}
+@include max-media(360px){
+    font-size: 50%;
+}
+}

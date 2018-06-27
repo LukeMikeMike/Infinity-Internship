@@ -1,0 +1,133 @@
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html{
+	font-size: 12px;
+	
+	@include min-media($br-mobile){
+		font-size: 16px;
+	}
+	
+	@include min-media($br-desktop-xl){
+		font-size: 20px;
+	}
+}
+
+body{
+	font-family: $base-font;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
+	color: $body-color;
+	letter-spacing: 1px;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+button{
+	background: none;
+	border: 0;
+	padding: 0;
+}
+
+p{
+	margin: $space * .5 0;
+}
+
+h1, .h1{
+	font-size: $h1-font-size;
+	letter-spacing: 0;
+	margin-bottom: $space;
+}
+h2, .h2{
+	font-size: $h2-font-size;
+	letter-spacing: 0;
+	margin-bottom: $space;
+}
+h3, .h3{
+	font-size: $h3-font-size;
+	letter-spacing: 0;
+	margin-bottom: $space;
+}
+
+
+.wrapper{
+	padding-left: $space;
+	padding-right: $space;
+	margin: 0 auto;
+	padding-left: $space;
+	padding-right: $space;
+	max-width: $wrapper-max;
+	
+	@include min-media($br-tablet){
+		padding-left: $space * 2;
+		padding-right: $space * 2;
+	}
+}
+
+.component{
+    margin-top: $space * 2;
+    margin-bottom: $space * 2;
+}
+
+.btn{
+    display: inline-block;
+    //background-color: #fff;
+    padding: $space * .5 $space;
+    min-width: 190px;
+	color: $white;
+	background-color: $color-3;
+    border: 1px solid $white;
+    font-size: $body-font-size2;
+    text-align: center;
+    text-transform: uppercase;
+    
+    &:hover{
+        color: #fff;
+        background-color: $color-4;
+    }
+    
+    &--ghost{
+        color: #fff;
+        background-color: $color-4;
+        
+        &:hover{
+            color: $color-4;
+            background-color: #fff;
+        }
+    }
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+%simple-text-shadow{
+    text-shadow: 1px 1px #000;
+}
+%simple-box-shadow{
+    box-shadow: 1px 1px #000;
+}
+
+
+
+
+
+
+
+
